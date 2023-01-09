@@ -47,10 +47,16 @@ android {
         applicationId "com.example.sunbreak"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        manifestPlaceholders += [
+            JPUSH_PKGNAME : applicationId,
+            JPUSH_APPKEY : youAppKey,
+            JPUSH_CHANNEL : 'developer-default',
+        ]
     }
 
     buildTypes {
